@@ -1,0 +1,15 @@
+﻿<div class="panel" id="knowledgeCenter">
+    <div class="panel-heading panelHeader"  data-ng-click="isCollapsedKnowledge=!isCollapsedKnowledge">
+        Knowledge Center
+    </div>
+    <div class="panel-body" data-uib-collapse="isCollapsedKnowledge">
+        <ul class="list-group">
+            <li class="list-group-item" data-ng-repeat="document in vm.documentsByUser">
+                <a>
+                    <span class="fa fa-file-text"></span>
+                    <span class="list-group-item-heading" data-ng-bind="document.text"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

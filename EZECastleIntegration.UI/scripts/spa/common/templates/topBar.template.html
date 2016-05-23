@@ -1,0 +1,34 @@
+﻿<div data-ng-controller="TopBarCtrl as vm" id="topBar">
+    <div class="navbar navbar-default navbar-fixed-top" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" data-ui-sref="index">EZE Castle Integration</a>
+            </div>
+            <div class="collapse navbar-collapse" data-ng-if="vm.isUserLogined()" id="navBar">
+                <ul class="nav navbar-nav navbar-left">
+                    <li data-ng-repeat="menuItem in vm.menuItems"
+                        data-ng-mouseover="isHover=true" data-ng-mouseleave="isHover=false">
+                        <a data-ui-sref="{{menuItem.href}}" data-ng-bind="menuItem.title" data-ng-class="{'overMenuItem':isHover}"></a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <p class="navbar-text" data-ng-bind="vm.userInfo.userName"></p>
+                    <li data-ng-click="vm.logout()">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-log-out"></span>
+                            Log Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 companyName" data-ng-if="vm.isUserLogined() && !vm.state.is('index')">
+        <h3 class="text-center text-info"> Hello, {{vm.userInfo.memberName}} ({{vm.userInfo.companyName}})</h3>
+    </div>
+</div>

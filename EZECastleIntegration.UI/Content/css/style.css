@@ -1,0 +1,298 @@
+﻿.overMenuItem {
+    border-bottom: solid 1px black;
+}
+
+#mainContent {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#mobileLogin {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+ #index .banner .carousel-caption h2{
+     color: white;
+ }
+@media (max-width: 992px ) {
+    #index .banner .carousel-caption h3 {
+        font-size: small;
+    }
+
+    #index .banner .carousel-caption h2 {
+        font-size: medium;
+        font-style: italic;
+    }
+
+    #index .banner .carousel-caption {
+        position: absolute;
+        left: 0 !important;
+        width: 200px !important;
+        bottom: 0 !important;
+    }
+
+    #index .banner .carousel-control {
+        width: 5%;
+    }
+    
+    #index .banner .carousel-caption {
+        width: 500px;
+        margin: 0 50px;
+        text-align: left;
+    }
+}
+
+#index .banner .carousel-caption {
+    position: absolute;
+    left: 10%;
+    bottom: 25%;
+    text-align: left;
+}
+
+#index .banner .carousel-control {
+    width: 5%;
+}
+
+#index .banner .carousel-caption {
+    width: 500px;
+    margin: 0 50px;
+    text-align: left;
+}
+
+#widgetsRegion .panel {
+    -webkit-box-shadow: 0 0 0 ;
+    box-shadow: 0 0 0 ;
+    /*background-color: #f1f2f4;*/
+}
+
+.widgets {
+    margin-top: 5px;
+}
+/*---------------------------------------------------------------Login Region----------------------------------------------*/
+#loginForm body, html {
+    height: 100%;
+}
+
+#loginForm .card-container.card {
+    padding: 17px 0;
+}
+
+#loginForm .btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+#loginForm .profile-img-card {
+    width: 90px;
+    height: 85px;
+    margin: 0 auto 0;
+    display: block;
+    /*content:url("../Content/img/avatar.png");*/
+}
+
+#loginForm .reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#loginForm .form-signin #email,
+#loginForm .form-signin #password {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+#loginForm .form-signin input[type=email],
+#loginForm .form-signin input[type=password],
+#loginForm .form-signin input[type=text],
+#loginForm .form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#loginForm .form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+#loginForm .btn.btn-signin {
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 45px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.login-modal .modal-dialog {
+    width: 300px;
+}
+
+.modal {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+}
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#serviceDashboard .navigationPanel #notifyPanel .alert {
+    padding: 9px;
+    margin-bottom: 14px;
+    border: none;
+    -ms-border-radius: 0;
+    border-radius: 0;
+}
+
+/*#serviceDashboard .navigationPanel #knowledgeCenter .knowledgePanelHeader,
+#serviceDashboard .navigationPanel #applicationPanel .applicationPanelHeader,*/
+ .panelHeader {
+    line-height: 40px;
+    font-size: 15px;
+    letter-spacing: 0;
+    color: #000;
+    font-family: Open Sans,Helvetica Neue,sans-serif;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+#serviceDashboard .navigationPanel #notifyPanel .panelHeader span {
+      padding: 15px 5px;
+    font-size: 12px;
+    color: #65788f;
+    font-size: 13px;
+    line-height: 12px;
+}
+
+
+
+#serviceDashboard .navigationPanel #applicationPanel .applicationLogo {
+    max-height: 115px;
+   /* border: solid #eee 1px;
+    box-shadow: 1px 0 6px rgba(0,0,0,0.6);*/
+}
+
+#serviceDashboard .navigationPanel #applicationPanel .applicationLogo .cover {
+    margin-top: 5px;
+}
+
+#serviceDashboard .navigationPanel #applicationPanel .applicationLogo .cover {
+    text-align: center;
+}
+
+#serviceDashboard .navigationPanel #applicationPanel .applicationLogo {
+    cursor: pointer;
+}
+
+#serviceDashboard .navigationPanel #applicationPanel .applicationLogo i {
+    padding: 10px;
+    background-color: rgb(0, 114, 198);
+    color: white;
+    border-radius: 7px;
+}
+
+#serviceDashboard .navigationPanel #applicationPanel .applicationLogo .applicationLogo a:hover {
+    text-decoration: none;
+}
+
+#serviceDashboard .navigationPanel #applicationPanel .applicationLogo:hover {
+    background-color: #eee;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+#serviceDashboard .informationPanel .statistics .ticketStatisticWidget {
+   margin-top: 30px;
+    /*border: solid #eee 1px;
+    box-shadow: 1px 0 6px rgba(0,0,0,0.6);*/
+}
+
+#serviceDashboard .informationPanel .viewer .buttonSwitches {
+    margin: 10px 0 10px 0;
+}
+
+#serviceDashboard .informationPanel .statistics .ticketStatisticWidget i {
+    margin: 5px;
+}
+
+ #serviceDashboard .informationPanel .viewer {
+        margin-top: 5px;
+    }
+
+ #serviceDashboard .informationPanel .viewer table {
+            table-layout: fixed;
+            word-wrap: break-word;
+        }
+
+#serviceDashboard .informationPanel .viewer table td:not([class='detalized']) {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+body #index {
+    background-color: white !important;
+}
+body {
+    background-color: #f1f2f4 !important;
+}
+
+
+.ezeWidget {
+    background-color: #ffffff;
+    margin-bottom: 10px;
+}
+/*#reporting .leftPanel .reportPanelHead i {
+    margin-left: 10px;
+}
+
+#reporting .leftPanel .reportPanelHead i:hover {
+    cursor: pointer;
+}
+
+#reporting .leftPanel #serviceTrendsPanel .reportSwitchButton {
+    margin-top: 10px;
+}*/
+
+#reporting .leftPanel .customReportButton {
+    margin-bottom: 5px;
+}

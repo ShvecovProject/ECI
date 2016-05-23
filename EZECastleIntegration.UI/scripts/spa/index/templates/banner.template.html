@@ -1,0 +1,19 @@
+﻿<div class="row-fluid carousel">
+    <div class="col-md-12">
+        <uib-carousel active="vm.active" class="banner">
+            <uib-slide ng-repeat="slide in vm.slides track by slide.id" interval="vm.interval" index="slide.id">
+                <img style="margin: auto; min-height: 290px;" data-ng-src="{{slide.imageSrc}}" />
+                <div class="carousel-caption">
+                    <h2>ECI Customer Portal</h2>
+                    <h3>
+                        Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                        Donec id elit non mi porta gravida at eget metus.Nullam id dolor id ulticies
+                        vechicula it id elit.
+                    </h3>
+                    <button data-ng-if="!vm.rootScope.isAuth" class="btn btn-primary btn-lg" data-ng-click="vm.loginToPortal()">Enter Portal</button>
+                </div>
+            </uib-slide>
+        </uib-carousel>
+        <button id="mobileLogin" data-ng-if="!vm.rootScope.isAuth" class="btn btn-default btn-primary visible-xs-block visible-xs text-center" data-ng-click="vm.loginToPortal()"> Enter Portal</button>
+    </div>
+</div>

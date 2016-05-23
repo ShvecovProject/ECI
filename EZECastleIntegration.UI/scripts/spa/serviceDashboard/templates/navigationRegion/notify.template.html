@@ -1,0 +1,15 @@
+﻿<div class="panel" id="notifyPanel">
+    <div class="panel-heading panelHeader" data-ng-click="isCollapsedNotify=!isCollapsedNotify">
+        My Notifications
+        <span class="label pull-right" data-ng-bind="vm.notifyByUser.length"></span>
+    </div>
+    <div class="panel-body" data-uib-collapse="isCollapsedNotify">
+        <div class="alert alert-info" data-ng-class="{'alert-danger':notify.isDanger}" role="alert" data-ng-repeat="notify in vm.notifyByUser">
+            <button type="button" class="close" aria-label="Close" data-ng-click="vm.removeNotifyItem(notify)">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{notify.text}}
+        </div>
+        <p class="text-center text-info text-uppercase" data-ng-hide="vm.notifyByUser.length!==0"> For now you do not have any notifications </p>
+    </div>
+</div>

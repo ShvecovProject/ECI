@@ -1,0 +1,19 @@
+{
+  "name": "eze",
+  "version": "1.0.0",
+  "description": "EZECastleIntegration",
+  "author": "Shvecov",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-angular-templates": "^1.0.3",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1"
+  },
+  "dependencies": {
+    "angular-chart.js": "^0.10.2",
+    "angular-daterangepicker": "^0.2.2",
+    "chart.js": "^2.1.3"
+  }
+}

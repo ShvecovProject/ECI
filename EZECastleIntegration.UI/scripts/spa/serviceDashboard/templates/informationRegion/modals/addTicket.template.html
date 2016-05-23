@@ -1,0 +1,35 @@
+﻿<div class="modal-header">
+    <h5 class="modal-title">Add Ticket</h5>
+</div>
+<div class="modal-body">
+    <form id="addTicketForm" class="form-horizontal" name="addTicketForm">
+        <div class="container-fluid">
+            <div class="form-group">
+                <label for="teamDD" class="col-md-2 control-label">Team:</label>
+                <div class="col-sm-5">
+                    <select id="teamDD" data-ng-model="vm.newTicket.team" class="form-control dropdown" ng-options="opt.name for opt in  vm.teamData">
+                        <!--<option data-ng-repeat="team in vm.teamData" value="{{team.id}}">
+                            {{team.name}}
+                        </option>-->
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' :addTicketForm.$submitted && addTicketForm.discription.$error.required}">
+                <label for="discription" class="col-md-2 control-label">Discription:</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="5" id="discription" name="discription" data-ng-model="vm.newTicket.discription" required></textarea>
+                </div>
+            </div>
+            <!--<div data-ng-show="addTicketForm.$submitted || addTicketForm.discription.$touched">
+                <div class="alert alert-danger" data-ng-show="addTicketForm.discription.$error.required">Discription required</div>
+            </div>-->
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <div class="form-group">
+        <div class="text-center">
+            <button type="submit" class="btn btn-success" data-ng-click="vm.addTicket()">Add Ticket</button>
+        </div>
+    </div>
+</div>

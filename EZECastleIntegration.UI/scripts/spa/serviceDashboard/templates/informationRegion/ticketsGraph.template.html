@@ -1,0 +1,27 @@
+﻿<div class="row ezeWidget">
+    <div class="col-md-12">
+        <h3 class="text-center">
+            Graphs
+        </h3>
+
+        <div class="form-inline">
+            <div class="form-group">
+                <label for="team">TEAM:</label>
+                <select id="team" data-ng-model="vm.selectTeam" class="form-control">
+                    <option value="">--No Selected--</option>
+                    <option data-ng-repeat="team in vm.teamData" value="{{team.id}}">
+                        {{team.name}}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="period">PERIOD:</label>
+                <input id="period" date-range-picker class="form-control date-picker" type="text" ng-model="vm.periodDates" style="width: 225px" required />
+            </div>
+        </div>
+        <canvas id="line" class="chart chart-line" chart-data="vm.chartData"
+                chart-labels="vm.labels" chart-legend="true" chart-series="vm.series"
+                height="75"></canvas>
+    </div>
+
+</div>

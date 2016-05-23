@@ -1,0 +1,67 @@
+﻿<div class="row ezeWidget">
+    <div class="col-md-12">
+        <h3>
+            Service Tickets
+            <button type="button" class="btn btn-link" data-ng-click="vm.addTicket()">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                Add Ticket
+            </button>
+        </h3>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="team">TEAM:</label>
+                    <select id="team" data-ng-model="vm.selectTeam" class="form-control">
+                        <option value="">--No Selected--</option>
+                        <option data-ng-repeat="team in vm.teamData" value="{{team.id}}">
+                            {{team.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="period">PERIOD:</label>
+                    <input id="period" date-range-picker class="form-control date-picker" type="text" ng-model="vm.periodDates" style="width: 225px" required />
+                </div>
+            </div>
+
+            <div class="buttonSwitches form-inline">
+                <div class="form-group">
+                    <button type="button" class="btn btn-info" data-ng-click="vm.statusFilter=vm.tiketStatusEnum.open">
+                        Open
+                        <i class="label label-info label-as-blage pull-right" data-ng-bind="(vm.tickets | filter:{status:vm.tiketStatusEnum.open}).length"></i>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-info" data-ng-click="vm.statusFilter=vm.tiketStatusEnum.closed">
+                        Closed
+                        <i class="label label-info label-as-blage pull-right" data-ng-bind="(vm.tickets | filter:{status:vm.tiketStatusEnum.closed}).length"></i>
+                    </button>
+                </div>
+            </div>
+            <table class="table table-bordered table-hover table-responsive">
+                <tr>
+                    <th>ID</th>
+                    <th>Discription</th>
+                    <th>Status</th>
+                    <th>Team</th>
+                    <th>Date Created</th>
+                </tr>
+                <tr data-ng-repeat-start="ticket in vm.tickets.slice(((vm.currentPage-1)*5), vm.currentPage*5) | filter:{status:vm.statusFilter, team:{id:vm.selectTeam}}| dateRange:vm.periodDates">
+                    <td class="col-md-1">
+                        <i class="fa fa-1x fa-plus" aria-hidden="true" data-ng-if="!ticket.expanded" data-ng-click="ticket.expanded = true"></i>
+                        <i class="fa fa-1x fa-minus" aria-hidden="true" data-ng-if="ticket.expanded" data-ng-click="ticket.expanded = false"></i>
+                       {{ticket.id}}
+                    </td>
+                    <td class="col-md-4">{{ticket.discription}}</td>
+                    <td class="col-md-2">{{ticket.status}}</td>
+                    <td class="col-md-2">{{ticket.team.name}}</td>
+                    <td class="col-md-2">{{ticket.dateCreated | date:"dd-MM-yyyy"}}</td>
+                </tr>
+                <tr data-ng-if="ticket.expanded" data-ng-repeat-end="">
+                    <td class="detalized" colspan="5">
+                        <p data-ng-bind="ticket.discription"></p>
+                    </td>
+                </tr>
+            </table>
+            <uib-pagination total-items="vm.tickets.length" items-per-page="5" ng-model="vm.currentPage" class="pagination-sm"></uib-pagination>
+    </div>
+</div>

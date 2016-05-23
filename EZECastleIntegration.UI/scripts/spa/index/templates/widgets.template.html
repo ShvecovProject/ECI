@@ -1,0 +1,60 @@
+﻿<div class="row-fluid" id="widgetsRegion">
+    <div class="col-md-12">
+        <!--<div class="panel">
+            <div class="panel-body">-->
+                <div class="col-md-4">
+                    <div class="panel">
+                        <div class="panel-heading ">
+                            <h3 class="text-center">Recent News</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p class="text-center" data-ng-bind="vm.recentNews"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="text-center">Latest Whitepapers</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p class="text-center" data-ng-bind="vm.latestWhitepapers"></p>
+                            <!--<ul class="list-group">
+                                <li class="list-group-item" data-ng-repeat="document in vm.resentWhitePagers">
+                                    <a>
+                                        <span class="glyphicon glyphicon-file"></span>
+                                        <span class="list-group-item-heading" data-ng-bind="document.title"></span>
+                                    </a>
+                                </li>
+                            </ul>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="text-center"> Contact us</h3>
+                        </div>
+                        <div class="panel-body">
+                            <address class="text-center">
+                                <strong data-ng-bind="vm.companyContactUs.name"></strong>
+                                <br/>
+                                <span>
+                                    {{vm.companyContactUs.address.postCode}}
+                                    {{vm.companyContactUs.address.addressLine1}}
+                                </span>
+                                <br/>
+                                {{vm.companyContactUs.address.city}}
+                                <br/>
+                                <abbr title="Phone">P:</abbr> {{vm.companyContactUs.telephone}}
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="panel-footer">
+            </div>-->
+        <!--</div>
+    </div>-->
+</div>
