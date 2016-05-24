@@ -290,24 +290,10 @@
     <Content Include="scripts\spa\serviceDashboard\templates\navigationRegion\application.template.html" />
     <Content Include="scripts\spa\serviceDashboard\templates\navigationRegion\knowledgeCenter.template.html" />
     <Content Include="scripts\spa\serviceDashboard\templates\navigationRegion\notify.template.html" />
-    <Content Include="scripts\vendors\angular-chart.js" />
-    <Content Include="scripts\vendors\angular-chart.min.js" />
-    <Content Include="scripts\vendors\angular-daterangepicker.min.js" />
-    <Content Include="scripts\vendors\angular-ui-router.min.js" />
     <Content Include="scripts\spa\common\common.js" />
     <Content Include="scripts\spa\common\templates\foother.template.html" />
-    <Content Include="scripts\vendors\angular-base64.js" />
-    <Content Include="scripts\vendors\angular-cookies.js" />
-    <Content Include="scripts\vendors\angular-resource.min.js" />
-    <Content Include="scripts\vendors\angular-route.min.js" />
-    <Content Include="scripts\vendors\angular.min.js" />
-    <Content Include="scripts\vendors\Chart.bundle.min.js" />
-    <Content Include="scripts\vendors\Chart.js" />
-    <Content Include="scripts\vendors\Chart.min.js" />
     <Content Include="scripts\vendors\common\kendo.all.min.js" />
     <Content Include="scripts\vendors\common\kendo.angular.min.js" />
-    <Content Include="scripts\vendors\csv.js" />
-    <Content Include="scripts\vendors\daterangepicker.js" />
     <Content Include="scripts\vendors\dev\angular-animate.js" />
     <Content Include="scripts\vendors\dev\angular-chart.js" />
     <Content Include="scripts\vendors\dev\angular-daterangepicker.js" />
@@ -324,14 +310,6 @@
     <Content Include="scripts\vendors\dev\ng-bs-daterangepicker.js" />
     <Content Include="scripts\vendors\dev\ui-bootstrap.js" />
     <Content Include="scripts\vendors\dev\ui-bootstrap-tpls.js" />
-    <Content Include="scripts\vendors\kendo.all.min.js" />
-    <Content Include="scripts\vendors\kendo.angular.min.js" />
-    <Content Include="scripts\vendors\loading-bar.min.js" />
-    <Content Include="scripts\vendors\modernizr-2.8.3.js" />
-    <Content Include="scripts\vendors\moment.min.js" />
-    <Content Include="scripts\vendors\ng-bs-daterangepicker.min.js" />
-    <Content Include="scripts\vendors\pdfmake.js" />
-    <Content Include="scripts\vendors\pdfmake.min.js" />
     <Content Include="scripts\vendors\release\angular-animate.min.js" />
     <Content Include="scripts\vendors\release\angular-chart.min.js" />
     <Content Include="scripts\vendors\release\angular-daterangepicker.min.js" />
@@ -348,14 +326,7 @@
     <Content Include="scripts\vendors\release\ng-bs-daterangepicker.min.js" />
     <Content Include="scripts\vendors\release\ui-bootstrap.min.js" />
     <Content Include="scripts\vendors\release\ui-bootstrap-tpls.min.js" />
-    <Content Include="scripts\vendors\ui-bootstrap-tpls.min.js" />
-    <Content Include="scripts\vendors\ui-bootstrap.min.js" />
-    <Content Include="scripts\vendors\angular.js" />
-    <Content Include="scripts\vendors\bootstrap.min.js" />
-    <Content Include="scripts\vendors\jquery-1.9.1.min.js" />
     <Content Include="scripts\spa\app.js" />
-    <Content Include="scripts\vendors\ui-grid.min.js" />
-    <Content Include="scripts\vendors\vfs_fonts.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

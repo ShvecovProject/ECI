@@ -3,3 +3,8 @@ C:\EZECastleIntegration\EZECastleIntegration\BusinessLogic\bin\Debug\BusinessLog
 C:\EZECastleIntegration\EZECastleIntegration\BusinessLogic\obj\Debug\EZECastleIntegration.Repository.csprojResolveAssemblyReference.cache
 C:\EZECastleIntegration\EZECastleIntegration\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\EZECastleIntegration\EZECastleIntegration\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\ECI\BusinessLogic\bin\Debug\BusinessLogic.dll
+D:\ECI\BusinessLogic\bin\Debug\BusinessLogic.pdb
+D:\ECI\BusinessLogic\obj\Debug\EZECastleIntegration.Repository.csprojResolveAssemblyReference.cache
+D:\ECI\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\ECI\BusinessLogic\obj\Debug\BusinessLogic.pdb
