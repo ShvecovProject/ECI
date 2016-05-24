@@ -3,37 +3,62 @@ This file in the main entry point for defining grunt tasks and using grunt plugi
 Click here to learn more. http://go.microsoft.com/fwlink/?LinkID=513275&clcid=0x409
 */
 module.exports = function (grunt) {
-
+    this.buildType = {
+        release: "release",
+        dev: "dev"
+    };
+    this.vendorsFiles = [
+        "modernizr",
+        "jquery",
+        "bootstrap",
+        "angular",
+        "angular-resource",
+        "angular-animate",
+        "angular-ui-router",
+        "ui-bootstrap",
+        "ui-bootstrap-tpls",
+        "Chart",
+        "angular-chart",
+        "loading-bar",
+        "moment",
+        "ng-bs-daterangepicker",
+        "daterangepicker",
+        "angular-daterangepicker"
+    ];
+    this.kendoFiles = [
+      "scripts/vendors/common/kendo.all.min.js",
+        "scripts/vendors/common/kendo.angular.min.js",
+    ];
+    this.getResource = function (type) {
+        var returnValue = [],
+            basePath = "",
+            typeFile = type === this.buildType.dev ? ".js" : ".min.js";
+        switch (type) {
+            case this.buildType.dev:
+                basePath = "scripts/vendors/dev/";
+                break;
+            case this.buildType.release:
+                basePath = "scripts/vendors/release/";
+                break;
+        }
+        for (var i = 0, max = this.vendorsFiles.length; i < max; i++) {
+            returnValue.push(basePath + this.vendorsFiles[i] + typeFile);
+        }
+        return returnValue;
+    };
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
+        clean: {
+            clean: ['output/release', 'output/dev','output/fonts']
+        },
         concat: {
-            js_vendors: {
-                src: [
-                 "scripts/vendors/modernizr-2.8.3.js",
-                 "scripts/vendors/jquery-1.9.1.min.js",
-                 "scripts/vendors/bootstrap.min.js",
-                 "scripts/vendors/angular.js",
-                 "scripts/vendors/angular-route.min.js",
-                 "scripts/vendors/angular-resource.min.js",
-                 "scripts/vendors/angular-cookies.js",
-                 "scripts/vendors/angular-base64.js",
-                 "scripts/vendors/angular-animate.min.js",
-                 "scripts/vendors/ui-bootstrap.min.js",
-                 "scripts/vendors/ui-bootstrap-tpls.min.js",
-                 "scripts/vendors/angular-ui-router.min.js",
-                 "scripts/vendors/moment.min.js",
-                 "scripts/vendors/ng-bs-daterangepicker.min.js",
-                 "scripts/vendors/daterangepicker.js",
-                 "scripts/vendors/angular-daterangepicker.min.js",
-                 "scripts/vendors/Chart.js",
-                 "scripts/vendors/angular-chart.js",
-                 "scripts/vendors/pdfmake.min.js",
-                 "scripts/vendors/vfs_fonts.js",
-                 "scripts/vendors/ui-grid.min.js",
-                 "scripts/vendors/csv.js",
-                 "scripts/vendors/loading-bar.min.js"
-                ],
-                dest: 'dev/vendors.js'
+            js_vendors_dev: {
+                src: this.getResource(this.buildType.dev),
+                dest: 'output/dev/vendors.js'
+            },
+            js_vendors_release: {
+                src: this.getResource(this.buildType.release),
+                dest: 'output/release/vendors.min.js'
             },
             js_spa: {
                 src: [
@@ -87,49 +112,128 @@ module.exports = function (grunt) {
 //-------------------------------------EZECastleIntegrationSPA-----------------------------------------------------------------------------------------------
                     "scripts/spa/app.js"
                 ],
-                dest: 'dev/spa.js'
+                dest: 'output/dev/spa.js'
             },
+
             css: {
                 src: ['content/css/**/*.css'],
-                dest: 'dev/app.css'
+                dest: 'output/dev/app.css'
             }
         },
+
         ngtemplates: {
             app: {
                 src: 'scripts/spa/**/*.template.html',
-                dest: 'dev/appTpl.js',
+                dest: 'output/dev/appTpl.js',
                 options: {
                     module: 'EZECastleIntegrationSPA'
                 }
             }
         },
-        
-        uglify: {
-            js: {
-                src: 'dev/spa.js',
-                dest:'release/spa.min.js'
+
+        copy: {
+            copyCssToRelease: {
+                src: [
+                 'output/dev/app.css'
+                ],
+                expand: true,
+                dest: 'output/release/',
+                flatten: true,
+                filter: 'isFile'
             },
-            jsTemplates: {
-                src: 'dev/appTpl.js',
-                dest: 'release/appTpl.min.js'
+            copyBaseFontsDev: {
+                src: [
+                     'content/fonts/**.*ttf',
+                     'content/fonts/**.*woff',
+                     'fonts/**.*woff2',
+                     'fonts/**.*ttf',
+                     'fonts/**.*woff'
+                ],
+                expand: true,
+                dest: 'output/fonts/',
+                flatten: true,
+                filter: 'isFile'
             },
-            vendors: {
-                src: 'dev/vendors.js',
-                dest: 'release/vendors.min.js'
+            copyKendoFonts: {
+                src: [
+                  'content/kendo/fonts/**.*ttf',
+                  'content/kendo/fonts/**.*woff'
+                ],
+                expand: true,
+                dest: 'output/dev/images/',
+                flatten: true,
+                filter: 'isFile'
+            },
+            copyKendoMaterial: {
+                src: [
+                 'content/kendo/Material/**'
+                ],
+                expand: true,
+                dest: 'output/dev/Material/',
+                flatten: true,
+                filter: 'isFile'
+            },
+            copyKendoSource: {
+                src: this.kendoFiles,
+                expand: true,
+                dest: 'output/dev/',
+                flatten: true,
+                filter: 'isFile'
+            },
+            //todo
+            copyKendoFontsRel: {
+                src: [
+                  'content/kendo/fonts/**.*ttf',
+                  'content/kendo/fonts/**.*woff'
+                ],
+                expand: true,
+                dest: 'output/release/images/',
+                flatten: true,
+                filter: 'isFile'
+            },
+            copyKendoMaterialRel: {
+                src: [
+                 'content/kendo/Material/**'
+                ],
+                expand: true,
+                dest: 'output/release/Material/',
+                flatten: true,
+                filter: 'isFile'
+            },
+            copyKendoSourceRel: {
+                src: this.kendoFiles,
+                expand: true,
+                dest: 'output/release/',
+                flatten: true,
+                filter: 'isFile'
             }
         },
-        cssmin: {
-            minify: {
-                src: 'dev/app.css',
-                dest:'release/app.min.css'
+
+        uglify: {
+            js: {
+                src: 'output/dev/spa.js',
+                dest:'output/release/spa.min.js'
+            },
+            jsTemplates: {
+                src: 'output/dev/appTpl.js',
+                dest: 'output/release/appTpl.min.js'
             }
-            
-        }
+        },
+
+        //cssmin: {
+        //    minify: {
+        //        src: 'dev/app.css',
+        //        dest:'output/release/app.min.css'
+        //    }
+        //}
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.registerTask('default', ['concat', 'ngtemplates', 'uglify', 'cssmin']);
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.registerTask('default', ['clean','copy', 'concat', 'ngtemplates']);
+    grunt.registerTask('release', ['clean','concat','copy', 'ngtemplates', 'uglify']);
 };

@@ -1,5 +1,5 @@
 ﻿(function () {
-    function reportService() {
+    function reportService($timeout) {
         this.getAviableReports = function() {
             return[
                 {
@@ -17,11 +17,31 @@
                 }
             ];
         };
+        this.getReportData = function() {
+            return $timeout(function() {
+                var returnValue = [];
+
+                for (var i = 0; i < 1000; i++) {
+                    returnValue.push({
+                        UserName: "User-" + i,
+                        Agreement: Math.random(),
+                        Company: "Comapany" + Math.random(),
+                        StartDate: new Date(),
+                        Invoice: 59 + i * Math.random()
+
+                    });
+                }
+                return returnValue;
+            }, 3000);
+
+
+        };
         var service = {
-            getAviableReports: this.getAviableReports
+            getAviableReports: this.getAviableReports,
+            getReportData: this.getReportData
         }
         return service;
     }
     angular.module('EZECastleIntegrationSPA.Reporting')
-        .factory("ReportService", reportService)
+        .factory("ReportService",['$timeout', reportService])
 })();

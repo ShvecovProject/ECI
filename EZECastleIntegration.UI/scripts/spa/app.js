@@ -35,10 +35,7 @@
         'angular-loading-bar',
         'cfp.loadingBar',
         'ngAnimate',
-        "ui.grid",
-        'ui.grid.selection',
-        'ui.grid.exporter',
-        'ui.grid.resizeColumns',
+        "kendo.directives",
         "EZECastleIntegrationSPA.Index",
         "EZECastleIntegrationSPA.ServiceDashboard",
         "EZECastleIntegrationSPA.Reporting",
@@ -133,7 +130,18 @@
                         controller: "ReportViewerCtrl",
                         controllerAs: 'vm'
                     }
+                },
+                resolve: {
+                    gridData: [
+                        'ReportService', function(reportService) {
+                         return  reportService.getReportData().then(function (data) {
+                                return data;
+                            });
+                           
+                        }
+                    ]
                 }
+
             });
     }])
 

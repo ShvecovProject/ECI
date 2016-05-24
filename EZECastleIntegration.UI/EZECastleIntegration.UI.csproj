@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
-  <Import Project="..\packages\MSBuild.Grunt.0.5.1\build\MSBuild.Grunt.props" Condition="Exists('..\packages\MSBuild.Grunt.0.5.1\build\MSBuild.Grunt.props')" />
-  <Import Project="..\packages\MSBuild.Node.0.5.1\build\MSBuild.Node.props" Condition="Exists('..\packages\MSBuild.Node.0.5.1\build\MSBuild.Node.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -156,6 +154,11 @@
     <Content Include="Content\css\daterangepicker.css" />
     <Content Include="Content\css\font-awesome.css" />
     <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\kendo.common-material.min.css" />
+    <Content Include="Content\css\kendo.common.min.css" />
+    <Content Include="Content\css\kendo.material.min.css" />
+    <Content Include="Content\css\kendo.mobile.all.min.css" />
+    <Content Include="Content\css\kendo.rtl.min.css" />
     <Content Include="Content\css\loading-bar.min.css" />
     <Content Include="Content\css\pdfmake.css" />
     <Content Include="Content\css\style.css" />
@@ -179,10 +182,20 @@
     <Content Include="Content\img\carousel\newImg7.jpg" />
     <Content Include="Content\img\carousel\newImg8.jpg" />
     <Content Include="Content\img\siteIcon.png" />
-    <Content Include="dev\app.css" />
-    <Content Include="dev\appTpl.js" />
-    <Content Include="dev\spa.js" />
-    <Content Include="dev\vendors.js" />
+    <Content Include="Content\kendo\Material\editor.png" />
+    <Content Include="Content\kendo\Material\imagebrowser.png" />
+    <Content Include="Content\kendo\Material\indeterminate.gif" />
+    <Content Include="Content\kendo\Material\loading-image.gif" />
+    <Content Include="Content\kendo\Material\loading.gif" />
+    <Content Include="Content\kendo\Material\loading_2x.gif" />
+    <Content Include="Content\kendo\Material\markers.png" />
+    <Content Include="Content\kendo\Material\markers_2x.png" />
+    <Content Include="Content\kendo\Material\slider-h.gif" />
+    <Content Include="Content\kendo\Material\slider-v.gif" />
+    <Content Include="Content\kendo\Material\sprite.png" />
+    <Content Include="Content\kendo\Material\sprite_2x.png" />
+    <Content Include="Content\kendo\Material\sprite_kpi.png" />
+    <Content Include="Content\kendo\Material\sprite_kpi_2x.png" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -198,10 +211,46 @@
     <Content Include="Content\css\bootstrap.min.css.map" />
     <Content Include="Content\css\bootstrap-theme.min.css.map" />
     <Content Include="gruntfile.js" />
-    <Content Include="release\app.min.css" />
-    <Content Include="release\appTpl.min.js" />
-    <Content Include="release\spa.min.js" />
-    <Content Include="release\vendors.min.js" />
+    <Content Include="output\dev\app.css" />
+    <Content Include="output\dev\appTpl.js" />
+    <Content Include="output\dev\kendo.all.min.js" />
+    <Content Include="output\dev\kendo.angular.min.js" />
+    <Content Include="output\dev\Material\editor.png" />
+    <Content Include="output\dev\Material\imagebrowser.png" />
+    <Content Include="output\dev\Material\indeterminate.gif" />
+    <Content Include="output\dev\Material\loading-image.gif" />
+    <Content Include="output\dev\Material\loading.gif" />
+    <Content Include="output\dev\Material\loading_2x.gif" />
+    <Content Include="output\dev\Material\markers.png" />
+    <Content Include="output\dev\Material\markers_2x.png" />
+    <Content Include="output\dev\Material\slider-h.gif" />
+    <Content Include="output\dev\Material\slider-v.gif" />
+    <Content Include="output\dev\Material\sprite.png" />
+    <Content Include="output\dev\Material\sprite_2x.png" />
+    <Content Include="output\dev\Material\sprite_kpi.png" />
+    <Content Include="output\dev\Material\sprite_kpi_2x.png" />
+    <Content Include="output\dev\spa.js" />
+    <Content Include="output\dev\vendors.js" />
+    <Content Include="output\release\app.min.css" />
+    <Content Include="output\release\appTpl.min.js" />
+    <Content Include="output\release\kendo.all.min.js" />
+    <Content Include="output\release\kendo.angular.min.js" />
+    <Content Include="output\release\Material\editor.png" />
+    <Content Include="output\release\Material\imagebrowser.png" />
+    <Content Include="output\release\Material\indeterminate.gif" />
+    <Content Include="output\release\Material\loading-image.gif" />
+    <Content Include="output\release\Material\loading.gif" />
+    <Content Include="output\release\Material\loading_2x.gif" />
+    <Content Include="output\release\Material\markers.png" />
+    <Content Include="output\release\Material\markers_2x.png" />
+    <Content Include="output\release\Material\slider-h.gif" />
+    <Content Include="output\release\Material\slider-v.gif" />
+    <Content Include="output\release\Material\sprite.png" />
+    <Content Include="output\release\Material\sprite_2x.png" />
+    <Content Include="output\release\Material\sprite_kpi.png" />
+    <Content Include="output\release\Material\sprite_kpi_2x.png" />
+    <Content Include="output\release\spa.min.js" />
+    <Content Include="output\release\vendors.min.js" />
     <Content Include="scripts\spa\common\services\AuthService.js" />
     <Content Include="scripts\spa\index\controllers\CarouselCtrl.js" />
     <Content Include="scripts\spa\index\controllers\IndexCtrl.js" />
@@ -241,7 +290,6 @@
     <Content Include="scripts\spa\serviceDashboard\templates\navigationRegion\application.template.html" />
     <Content Include="scripts\spa\serviceDashboard\templates\navigationRegion\knowledgeCenter.template.html" />
     <Content Include="scripts\spa\serviceDashboard\templates\navigationRegion\notify.template.html" />
-    <Content Include="scripts\vendors\angular-animate.min.js" />
     <Content Include="scripts\vendors\angular-chart.js" />
     <Content Include="scripts\vendors\angular-chart.min.js" />
     <Content Include="scripts\vendors\angular-daterangepicker.min.js" />
@@ -252,17 +300,54 @@
     <Content Include="scripts\vendors\angular-cookies.js" />
     <Content Include="scripts\vendors\angular-resource.min.js" />
     <Content Include="scripts\vendors\angular-route.min.js" />
+    <Content Include="scripts\vendors\angular.min.js" />
     <Content Include="scripts\vendors\Chart.bundle.min.js" />
     <Content Include="scripts\vendors\Chart.js" />
     <Content Include="scripts\vendors\Chart.min.js" />
+    <Content Include="scripts\vendors\common\kendo.all.min.js" />
+    <Content Include="scripts\vendors\common\kendo.angular.min.js" />
     <Content Include="scripts\vendors\csv.js" />
     <Content Include="scripts\vendors\daterangepicker.js" />
+    <Content Include="scripts\vendors\dev\angular-animate.js" />
+    <Content Include="scripts\vendors\dev\angular-chart.js" />
+    <Content Include="scripts\vendors\dev\angular-daterangepicker.js" />
+    <Content Include="scripts\vendors\dev\angular-resource.js" />
+    <Content Include="scripts\vendors\dev\angular-ui-router.js" />
+    <Content Include="scripts\vendors\dev\angular.js" />
+    <Content Include="scripts\vendors\dev\bootstrap.js" />
+    <Content Include="scripts\vendors\dev\Chart.js" />
+    <Content Include="scripts\vendors\dev\daterangepicker.js" />
+    <Content Include="scripts\vendors\dev\jquery.js" />
+    <Content Include="scripts\vendors\dev\loading-bar.js" />
+    <Content Include="scripts\vendors\dev\modernizr.js" />
+    <Content Include="scripts\vendors\dev\moment.js" />
+    <Content Include="scripts\vendors\dev\ng-bs-daterangepicker.js" />
+    <Content Include="scripts\vendors\dev\ui-bootstrap.js" />
+    <Content Include="scripts\vendors\dev\ui-bootstrap-tpls.js" />
+    <Content Include="scripts\vendors\kendo.all.min.js" />
+    <Content Include="scripts\vendors\kendo.angular.min.js" />
     <Content Include="scripts\vendors\loading-bar.min.js" />
     <Content Include="scripts\vendors\modernizr-2.8.3.js" />
     <Content Include="scripts\vendors\moment.min.js" />
     <Content Include="scripts\vendors\ng-bs-daterangepicker.min.js" />
     <Content Include="scripts\vendors\pdfmake.js" />
     <Content Include="scripts\vendors\pdfmake.min.js" />
+    <Content Include="scripts\vendors\release\angular-animate.min.js" />
+    <Content Include="scripts\vendors\release\angular-chart.min.js" />
+    <Content Include="scripts\vendors\release\angular-daterangepicker.min.js" />
+    <Content Include="scripts\vendors\release\angular-resource.min.js" />
+    <Content Include="scripts\vendors\release\angular-ui-router.min.js" />
+    <Content Include="scripts\vendors\release\angular.min.js" />
+    <Content Include="scripts\vendors\release\bootstrap.min.js" />
+    <Content Include="scripts\vendors\release\Chart.min.js" />
+    <Content Include="scripts\vendors\release\daterangepicker.min.js" />
+    <Content Include="scripts\vendors\release\jquery.min.js" />
+    <Content Include="scripts\vendors\release\loading-bar.min.js" />
+    <Content Include="scripts\vendors\release\modernizr.min.js" />
+    <Content Include="scripts\vendors\release\moment.min.js" />
+    <Content Include="scripts\vendors\release\ng-bs-daterangepicker.min.js" />
+    <Content Include="scripts\vendors\release\ui-bootstrap.min.js" />
+    <Content Include="scripts\vendors\release\ui-bootstrap-tpls.min.js" />
     <Content Include="scripts\vendors\ui-bootstrap-tpls.min.js" />
     <Content Include="scripts\vendors\ui-bootstrap.min.js" />
     <Content Include="scripts\vendors\angular.js" />
@@ -298,12 +383,30 @@
     <Content Include="scripts\spa\common\templates\topBar.template.html" />
     <Content Include="package.json" />
     <Content Include="scripts\spa\serviceDashboard\templates\serviceDashboard.template.html" />
-    <Content Include="dev\ui-grid.ttf" />
-    <Content Include="dev\ui-grid.woff" />
+    <Content Include="Content\kendo\fonts\KendoUIGlyphs.ttf" />
+    <Content Include="Content\kendo\fonts\KendoUIGlyphs.woff" />
+    <Content Include="Content\fonts\ui-grid.woff" />
+    <Content Include="Content\fonts\ui-grid.ttf" />
+    <Content Include="Content\kendo\fonts\kendoui.woff" />
+    <Content Include="Content\kendo\fonts\kendoui.ttf" />
+    <Content Include="output\dev\images\kendoui.ttf" />
+    <Content Include="output\dev\images\kendoui.woff" />
+    <Content Include="output\dev\images\KendoUIGlyphs.ttf" />
+    <Content Include="output\dev\images\KendoUIGlyphs.woff" />
+    <Content Include="output\fonts\fontawesome-webfont.ttf" />
+    <Content Include="output\fonts\fontawesome-webfont.woff" />
+    <Content Include="output\fonts\fontawesome-webfont.woff2" />
+    <Content Include="output\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="output\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="output\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="output\fonts\ui-grid.ttf" />
+    <Content Include="output\fonts\ui-grid.woff" />
+    <Content Include="output\release\images\kendoui.ttf" />
+    <Content Include="output\release\images\kendoui.woff" />
+    <Content Include="output\release\images\KendoUIGlyphs.ttf" />
+    <Content Include="output\release\images\KendoUIGlyphs.woff" />
     <None Include="Properties\PublishProfiles\GoogleCloud.pubxml" />
     <Content Include="scripts\spa\serviceDashboard\templates\informationRegion\modals\addTicket.template.html" />
-    <Content Include="release\ui-grid.woff" />
-    <Content Include="release\ui-grid.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -354,15 +457,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\MSBuild.Node.0.5.1\build\MSBuild.Node.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.Node.0.5.1\build\MSBuild.Node.props'))" />
-    <Error Condition="!Exists('..\packages\MSBuild.Node.0.5.1\build\MSBuild.Node.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.Node.0.5.1\build\MSBuild.Node.targets'))" />
-    <Error Condition="!Exists('..\packages\MSBuild.Grunt.0.5.1\build\MSBuild.Grunt.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.Grunt.0.5.1\build\MSBuild.Grunt.props'))" />
-    <Error Condition="!Exists('..\packages\MSBuild.Grunt.0.5.1\build\MSBuild.Grunt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.Grunt.0.5.1\build\MSBuild.Grunt.targets'))" />
   </Target>
-  <Import Project="..\packages\MSBuild.Node.0.5.1\build\MSBuild.Node.targets" Condition="Exists('..\packages\MSBuild.Node.0.5.1\build\MSBuild.Node.targets')" />
-  <Import Project="..\packages\MSBuild.Grunt.0.5.1\build\MSBuild.Grunt.targets" Condition="Exists('..\packages\MSBuild.Grunt.0.5.1\build\MSBuild.Grunt.targets')" />
   <PropertyGroup>
-    <PreBuildEvent>grunt
+    <PreBuildEvent>grunt release
 </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
