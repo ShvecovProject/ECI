@@ -21,7 +21,7 @@
                     <div class="alert alert-danger" data-ng-show="loginForm.password.$error.required">Password is required</div>
                 </div>
                 <div data-ng-show="vm.authentifivationFailed && loginForm.email.$valid && loginForm.password.$valid ">
-                    <div class="alert alert-danger">Invalid email address or password</div>
+                    <div class="alert alert-danger" data-ng-bind="vm.loginErrorMessage"></div>
                 </div>
 
                 <div id="remember" class="checkbox">

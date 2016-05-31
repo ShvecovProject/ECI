@@ -10,8 +10,8 @@
                 return inputArray;
             }
         };
-    }
+    };
 
-    angular.module('EZECastleIntegrationSPA.ServiceDashboard')
-        .filter('dateRange', dateRange)
+    angular.module("EZECastleIntegrationSPA.ServiceDashboard")
+        .filter("dateRange", dateRange);
 })();

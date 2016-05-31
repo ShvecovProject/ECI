@@ -43,6 +43,6 @@
         }
     }
 
-    angular.module('EZECastleIntegrationSPA.ServiceDashboard')
-        .controller("TicketViewerCtrl", ['TicketService', '$rootScope','$uibModal', ticketViewerCtrl])
+    angular.module("EZECastleIntegrationSPA.ServiceDashboard")
+        .controller("TicketViewerCtrl", ["TicketService", "$rootScope", "$uibModal", ticketViewerCtrl]);
 })();

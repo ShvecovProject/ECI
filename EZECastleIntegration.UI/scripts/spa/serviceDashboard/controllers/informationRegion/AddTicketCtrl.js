@@ -9,6 +9,7 @@
             this.modalInstance.close(this.newTicket);
         }
     }
-    angular.module('EZECastleIntegrationSPA.ServiceDashboard')
-    .controller("AddTicketCtrl", ['$uibModalInstance', 'teamData', addTicketCtrl])
+
+    angular.module("EZECastleIntegrationSPA.ServiceDashboard")
+        .controller("AddTicketCtrl", ["$uibModalInstance", "teamData", addTicketCtrl]);
 })();

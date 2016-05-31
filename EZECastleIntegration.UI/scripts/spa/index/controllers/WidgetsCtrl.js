@@ -1,6 +1,7 @@
 ﻿(function () {
-    function widgetsCtrl() {
-        this.recentNews = "ECI Telecom Ltd delivers comprehensive networking solutions to service providers around the globe. ECI was founded in 1961 as a manufacturer of advanced telecommunications equipment. The company provides, next generation packet optical transport products, a variety of SDN/NFV applications, a comprehensive cyber security solution and a full range of professional services.";
+    function widgetsCtrl(recentNewsService) {
+        recentNewsService.getRecentNews();
+        this.recentNews ="ECI Telecom Ltd delivers comprehensive networking solutions to service providers around the globe. ECI was founded in 1961 as a manufacturer of advanced telecommunications equipment. The company provides, next generation packet optical transport products, a variety of SDN/NFV applications, a comprehensive cyber security solution and a full range of professional services.";
         this.resentWhitePagers = [
             { id: 0, title: "Document 1" },
             { id: 1, title: "Document 2" },
@@ -19,6 +20,7 @@
             telephone:"(123) 456-7890"
         }
     }
+
     angular.module('EZECastleIntegrationSPA.Index')
-    .controller("WidgetsCtrl", widgetsCtrl)
+        .controller("WidgetsCtrl", ['RecentNewsService', widgetsCtrl]);
 })();

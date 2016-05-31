@@ -13,8 +13,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="~/output/release/app.css" />
-    @*<link rel="stylesheet" type="text/css" href="~/output/dev/app.css" />*@
+    @*<link rel="stylesheet" type="text/css" href="~/output/release/app.css" />*@
+    <link rel="stylesheet" type="text/css" href="~/output/dev/app.css" />
 </head>
 <body data-ng-controller="RootCtrl">
     <div ng-include="'scripts/spa/common/templates/topBar.template.html'"></div>
@@ -23,25 +23,19 @@
     </div>
 <div ng-include="'scripts/spa/common/templates/foother.template.html'"></div>
 
-    <script type="text/javascript" src="~/output/release/vendors.min.js"></script>
+    @*<script type="text/javascript" src="~/output/release/vendors.min.js"></script>
     <script type="text/javascript" src="~/output/release/kendo.all.min.js"></script>
     <script type="text/javascript" src="~/output/release/kendo.angular.min.js"></script>
     <script type="text/javascript" src="~/output/release/spa.min.js"></script>
-    <script type="text/javascript" src="~/output/release/appTpl.min.js"></script>
+    <script type="text/javascript" src="~/output/release/appTpl.min.js"></script>*@
 
-    @*<script type="text/javascript" src="~/output/dev/vendors.js"></script>
+    <script type="text/javascript" src="~/output/dev/vendors.js"></script>
         <script type="text/javascript" src="~/output/dev/kendo.all.min.js"></script>
         <script type="text/javascript" src="~/output/dev/kendo.angular.min.js"></script>
         <script type="text/javascript" src="~/output/dev/spa.js"></script>
-        <script type="text/javascript" src="/output/dev/appTpl.js"></script>*@
+        <script type="text/javascript" src="/output/dev/appTpl.js"></script>
     
 
 
-@* include script files *@
-  @* <script type="text/javascript" src="~/release/vendors.min.js"></script>
-    <script type="text/javascript" src="~/release/kendo.all.min.js"></script>
-    <script type="text/javascript" src="~/release/kendo.angular.min.js"></script>
-    <script type="text/javascript" src="~/release/spa.min.js"></script>
-    <script type="text/javascript" src="~/release/appTpl.min.js"></script>*@ 
 </body>
 </html>

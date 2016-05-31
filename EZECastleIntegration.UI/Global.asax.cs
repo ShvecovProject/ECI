@@ -2,7 +2,6 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using System.Web.Optimization;
 using System.Web.Http;
 using EZECastleIntegration.UI.App_Start;
 
@@ -15,7 +14,9 @@ namespace EZECastleIntegration.UI
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            AutofacWebApiConfig.Initialize(GlobalConfiguration.Configuration);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
         }
     }
 }

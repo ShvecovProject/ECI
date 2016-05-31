@@ -23,11 +23,13 @@ module.exports = function (grunt) {
         "moment",
         "ng-bs-daterangepicker",
         "daterangepicker",
-        "angular-daterangepicker"
+        "angular-daterangepicker",
+        "angular-local-storage"
+      
     ];
     this.kendoFiles = [
       "scripts/vendors/common/kendo.all.min.js",
-        "scripts/vendors/common/kendo.angular.min.js",
+       "scripts/vendors/common/kendo.angular.min.js"
     ];
     this.getResource = function (type) {
         var returnValue = [],
@@ -65,11 +67,15 @@ module.exports = function (grunt) {
 //-------------------------------EZECastleIntegration.Index------------------------------------------------------------------------------------------------
                              //-----main
                     'scripts/spa/index/index.js',
+                    //--services
+                    "scripts/spa/index/services/RecentNewsService.js",
                              //--controllers
                     "scripts/spa/index/controllers/IndexCtrl.js",
                     'scripts/spa/index/controllers/CarouselCtrl.js',
                     'scripts/spa/index/controllers/WidgetsCtrl.js',
                     'scripts/spa/index/controllers/LoginCtrl.js',
+
+                    //
 
 //-------------------------------EZECastleIntegrationSPA.ServiceDashboard-----------------------------------------------------------------------------------
                     'scripts/spa/serviceDashboard/serviceDashboard.js',
@@ -107,7 +113,13 @@ module.exports = function (grunt) {
                     'scripts/spa/reporting/services/ReportService.js',
 //-------------------------------------EZECastleIntegrationSPA.Common---------------------------------------------------------------------------------------
                       'scripts/spa/common/common.js',
+                      //services
                       'scripts/spa/common/services/AuthService.js',
+                      'scripts/spa/common/services/SessionService.js',
+                      //controllers
+                      'scripts/spa/common/controllers/RootCtrl.js',
+                      'scripts/spa/common/controllers/TopBarCtrl.js',
+                      
 
 //-------------------------------------EZECastleIntegrationSPA-----------------------------------------------------------------------------------------------
                     "scripts/spa/app.js"
@@ -143,8 +155,6 @@ module.exports = function (grunt) {
             },
             copyBaseFontsDev: {
                 src: [
-                     'content/fonts/**.*ttf',
-                     'content/fonts/**.*woff',
                      'fonts/**.*woff2',
                      'fonts/**.*ttf',
                      'fonts/**.*woff'

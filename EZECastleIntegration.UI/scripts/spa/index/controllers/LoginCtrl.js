@@ -1,15 +1,19 @@
 ﻿(function () {
-    function loginCtrl(uimodalInstance, authService) {
-            this.modalInstance = uimodalInstance;
+    function loginCtrl(uimodalInstance, authService,state) {
+        this.modalInstance = uimodalInstance;
         this.login = function () {
-            if (authService.login(this.user.Email, this.user.Password)) {
-                    this.modalInstance.close();
-            } else {
-                this.authentifivationFailed = true;
-            }
-           
+            authService.loginOkta({ Email: this.user.Email, Password: this.user.Password }, function() {    
+                this.modalInstance.close();
+                state.go('serviceDashboard');
+                }.bind(this),function(error){
+                    this.loginErrorMessage = error.message;
+                    this.authentifivationFailed = true;
+                }.bind(this)
+            );
         }
     }
+
     angular.module('EZECastleIntegrationSPA.Index')
-    .controller("LoginCtrl", ['$uibModalInstance','AuthService', loginCtrl])
+        .controller("LoginCtrl", [
+            '$uibModalInstance', 'AuthService', '$state', loginCtrl])
 })();

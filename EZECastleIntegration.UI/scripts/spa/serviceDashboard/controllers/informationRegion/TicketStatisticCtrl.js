@@ -1,5 +1,5 @@
 ﻿(function () {
-    function ticketStatisticCtrl(ticketService, rootScope) {
+    function ticketStatisticCtrl(ticketService) {
         var tiketInformation = ticketService.getTicketsStatistics();
         this.tiketModel = [
             {
@@ -22,6 +22,7 @@
             }
         ];
     }
+
     angular.module('EZECastleIntegrationSPA.ServiceDashboard')
-    .controller("TicketStatisticCtrl", ['TicketService', '$rootScope', ticketStatisticCtrl])
+        .controller("TicketStatisticCtrl", ['TicketService', ticketStatisticCtrl]);
 })();

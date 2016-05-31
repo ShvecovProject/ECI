@@ -1,5 +1,6 @@
 ﻿(function () {
-    'use strict';
-    angular.module('EZECastleIntegrationSPA.ServiceDashboard', [
-    ])
+    "use strict";
+
+    angular.module("EZECastleIntegrationSPA.ServiceDashboard", [
+    ]);
 })();

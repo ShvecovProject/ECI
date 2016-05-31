@@ -5,7 +5,8 @@
             notifyService.removeNotify(notify);
             this.notifyByUser.splice(this.notifyByUser.indexOf(notify),1);
         }
-    }
-    angular.module('EZECastleIntegrationSPA.ServiceDashboard')
-    .controller("NotifyCtrl", ['NotificationService','$rootScope', notifyCtrl])
+    };
+
+    angular.module("EZECastleIntegrationSPA.ServiceDashboard")
+        .controller("NotifyCtrl", ["NotificationService", "$rootScope", notifyCtrl]);
 })();

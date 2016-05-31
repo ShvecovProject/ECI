@@ -6,7 +6,7 @@
             console.log("selected app" + appId);
         }
     }
-    
-    angular.module('EZECastleIntegrationSPA.ServiceDashboard')
-    .controller("ApplicationCtrl",['ApplicationService','$rootScope', applicationCtrl])
+
+    angular.module("EZECastleIntegrationSPA.ServiceDashboard")
+        .controller("ApplicationCtrl", ["ApplicationService", "$rootScope", applicationCtrl]);
 })();

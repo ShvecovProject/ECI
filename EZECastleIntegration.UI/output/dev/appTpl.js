@@ -184,7 +184,7 @@ angular.module('EZECastleIntegrationSPA').run(['$templateCache', function($templ
     "\n" +
     "                <div data-ng-show=\"vm.authentifivationFailed && loginForm.email.$valid && loginForm.password.$valid \">\r" +
     "\n" +
-    "                    <div class=\"alert alert-danger\">Invalid email address or password</div>\r" +
+    "                    <div class=\"alert alert-danger\" data-ng-bind=\"vm.loginErrorMessage\"></div>\r" +
     "\n" +
     "                </div>\r" +
     "\n" +
@@ -784,7 +784,7 @@ angular.module('EZECastleIntegrationSPA').run(['$templateCache', function($templ
 
 
   $templateCache.put('scripts/spa/serviceDashboard/templates/navigationRegion/knowledgeCenter.template.html',
-    "<div class=\"panel\" id=\"knowledgeCenter\">\r" +
+    "<div class=\"panel ezeWidget\" id=\"knowledgeCenter\">\r" +
     "\n" +
     "    <div class=\"panel-heading panelHeader\"  data-ng-click=\"isCollapsedKnowledge=!isCollapsedKnowledge\">\r" +
     "\n" +
@@ -817,7 +817,7 @@ angular.module('EZECastleIntegrationSPA').run(['$templateCache', function($templ
 
 
   $templateCache.put('scripts/spa/serviceDashboard/templates/navigationRegion/notify.template.html',
-    "<div class=\"panel\" id=\"notifyPanel\">\r" +
+    "<div class=\"panel ezeWidget\" id=\"notifyPanel\">\r" +
     "\n" +
     "    <div class=\"panel-heading panelHeader\" data-ng-click=\"isCollapsedNotify=!isCollapsedNotify\">\r" +
     "\n" +
